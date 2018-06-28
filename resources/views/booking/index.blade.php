@@ -20,6 +20,10 @@
 				  	<thead>
 			  		<tr>
 			  		  <th>No</th>
+			  		  <th>Nama</th>
+					  <th>Alamat</th>
+					  <th>No NIK</th>
+					  <th>No Hp</th>
 					  <th>Tanggal Pengambilan</th>
 					  <th>Tanggal Pengembalian</th>
 					  <th>Jumlah Hari</th>
@@ -35,6 +39,10 @@
 				  		@foreach($booking as $data)
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
+				    	<td>{{ $data->nama }}</td>
+				    	<td>{{ $data->alamat }}</td>
+				    	<td>{{ $data->no_nik }}</td>
+				    	<td>{{ $data->no_hp }}</td>
 				    	<td>{{ $data->tanggal_pengambilan }}</td>
 				    	<td>{{ $data->tanggal_pengembalian }}</td>
 				    	<td>{{ $data->jumlah_hari }}</td>

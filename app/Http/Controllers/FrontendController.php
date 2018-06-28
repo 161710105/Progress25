@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Booking;
+use Illuminate\Http\Request;
 use App\Mobil;
 use App\Supir;
+use App\Booking;
+use App\Pengembalian;
+use App\ Merk;
 use Carbon\Carbon;
 use Session;
 
-use Illuminate\Http\Request;
-
-class BookingController extends Controller
+class FrontendController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,11 +20,34 @@ class BookingController extends Controller
      */
     public function index()
     {
-        $supir=Supir::all();
-        $mobil=Mobil::all();
-        $booking = Booking::with('Mobil','Supir')->get();
-        return view('booking.index',compact('booking','supir','mobil'));
+        return view('frontend.index');
     }
+    public function listmobil()
+    {
+        $mobil = Mobil::all();
+        $supir = Supir::all();
+        
+        return view('frontend.listmobil',compact('mobil','supir'));
+    }
+    public function hasilbooking()
+    {
+        $mobil = Mobil::all();
+        $supir = Supir::all();
+        $booking = Booking::all();
+        return view('frontend.hasilbooking',compact('booking','mobil','supir'));
+    }
+    public function beresbooking()
+    {
+        return view('frontend.beresbooking');
+    }
+    // public function edithasilbooking()
+    // {
+    //     $mobil = Mobil::all();
+    //     $supir = Supir::all();
+    //     $booking = Booking::all();
+    //     return view('frontend.edithasilbooking',compact('booking','mobil','supir'));
+    // }
+
 
     /**
      * Show the form for creating a new resource.
@@ -32,9 +56,7 @@ class BookingController extends Controller
      */
     public function create()
     {
-        $mobil = Mobil::all();
-        $supir = Supir::all();
-        return view('booking.create',compact('mobil','supir'));
+        
     }
 
     /**
@@ -80,25 +102,25 @@ class BookingController extends Controller
         "level"=>"success",
         "message"=>"Berhasil menyimpan data Booking"
         ]);
-        return redirect()->route('booking.index');
+        return redirect()->route('hasilbooking');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Booking  $booking
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        $booking = Booking::findOrFail($id);
-        return view('booking.show',compact('booking'));
+        $mobil = Mobil::findOrFail($id);
+        return view('frontend.detailmobil',compact('mobil'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Booking  $booking
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function edit($id)
@@ -108,14 +130,14 @@ class BookingController extends Controller
         $selectedMobil = Booking::findOrFail($id)->mobil_id;
         $supir = Supir::all();
         $selectedSupir = Booking::findOrFail($id)->supir_id;
-        return view('booking.edit',compact('booking','mobil','selectedMobil','supir','selectedSupir'));
+        return view('frontend.edithasilbooking',compact('booking','mobil','selectedMobil','supir','selectedSupir'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Booking  $booking
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -151,13 +173,13 @@ class BookingController extends Controller
         "level"=>"success",
         "message"=>"Berhasil menyimpan <b>$booking->mobil_id</b>"
         ]);
-        return redirect()->route('booking.index');
+        return redirect()->route('hasilbooking');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Booking  $booking
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -168,6 +190,6 @@ class BookingController extends Controller
         "level"=>"success",
         "message"=>"Data Berhasil dihapus"
         ]);
-        return redirect()->route('booking.index');
+        return view('frontend.beresbooking');
     }
 }

@@ -17,9 +17,9 @@ class Supir extends Model
     {
         return $this->belongsToMany('App\Customer','pemesanans','supir_id','customer_id');
     }
-    public function Pemesanan()
+    public function Pengembalian()
     {
-        return $this->HasMany('App\Pemesanan','supir_id');
+        return $this->HasMany('App\Pengembalian','supir_id');
     }
     public function Booking()
     {

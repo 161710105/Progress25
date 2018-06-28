@@ -20,9 +20,9 @@ public function Customer()
     {
         return $this->belongsToMany('App\Customer','pemesanans','mobil_id','customer_id');
     }
-public function Pemesanan()
+public function Pengembalian()
     {
-        return $this->HasMany('App\Pemesanan','mobil_id');
+        return $this->HasMany('App\Pengembalian','mobil_id');
     }
 public function Booking()
     {

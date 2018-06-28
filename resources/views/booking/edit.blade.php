@@ -17,6 +17,42 @@
 			  	<form action="{{ route('booking.update',$booking->id) }}" method="post" >
 			  		<input name="_method" type="hidden" value="PATCH">
         			{{ csrf_field() }}
+        			<div class="form-group {{ $errors->has('nama') ? ' has-error' : '' }}">
+			  			<label class="control-label">Nama</label>	
+			  			<input type="text" name="nama" class="form-control" value="{{ $booking->nama }}"  required>
+			  			@if ($errors->has('nama'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('nama') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+			  		<div class="form-group {{ $errors->has('alamat') ? ' has-error' : '' }}">
+			  			<label class="control-label">Alamat</label>	
+			  			<input type="text" name="alamat" class="form-control" value="{{ $booking->alamat }}"  required>
+			  			@if ($errors->has('alamat'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('alamat') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+			  		<div class="form-group {{ $errors->has('no_nik') ? ' has-error' : '' }}">
+			  			<label class="control-label">No NIK</label>	
+			  			<input type="text" name="no_nik" class="form-control" value="{{ $booking->no_nik }}"  required>
+			  			@if ($errors->has('no_nik'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('no_nik') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
+			  		<div class="form-group {{ $errors->has('no_hp') ? ' has-error' : '' }}">
+			  			<label class="control-label">No HP</label>	
+			  			<input type="text" name="no_hp" class="form-control" value="{{ $booking->no_hp }}"  required>
+			  			@if ($errors->has('no_hp'))
+                            <span class="help-block">
+                                <strong>{{ $errors->first('no_hp') }}</strong>
+                            </span>
+                        @endif
+			  		</div>
 			  		<div class="form-group {{ $errors->has('tanggal_pengambilan') ? ' has-error' : '' }}">
 			  			<label class="control-label">Tanggal Pengambilan</label>	
 			  			<input type="date" name="tanggal_pengambilan" class="form-control" value="{{ $booking->tanggal_pengambilan }}" required>
@@ -33,15 +69,6 @@
 			  			@if ($errors->has('tanggal_pengembalian'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('tanggal_pengembalian') }}</strong>
-                            </span>
-                        @endif
-			  		</div>
-			  		<div class="form-group {{ $errors->has('jumlah_hari') ? ' has-error' : '' }}">
-			  			<label class="control-label">Jumlah Hari</label>	
-			  			<input type="number" name="jumlah_hari" class="form-control" value="{{ $booking->jumlah_hari }}" required>
-			  			@if ($errors->has('jumlah_hari'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('jumlah_hari') }}</strong>
                             </span>
                         @endif
 			  		</div>
@@ -68,15 +95,6 @@
 			  			@if ($errors->has('supir_id'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('supir_id') }}</strong>
-                            </span>
-                        @endif
-			  		</div>
-			  		<div class="form-group {{ $errors->has('total_harga') ? ' has-error' : '' }}">
-			  			<label class="control-label">Tanggal Pengambilan</label>	
-			  			<input type="text" name="total_harga" class="form-control" value="{{ $booking->total_harga }}" required>
-			  			@if ($errors->has('total_harga'))
-                            <span class="help-block">
-                                <strong>{{ $errors->first('total_harga') }}</strong>
                             </span>
                         @endif
 			  		</div>

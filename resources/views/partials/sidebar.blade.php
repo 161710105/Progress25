@@ -18,15 +18,13 @@
                                     <a href="{{ route('merk.index') }}">Merk</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('customer.index') }}">Customer</a>
-                                </li>
-                                <li>
                                     <a href="{{ route('supir.index') }}">Supir</a>
                                 </li>
                                 <li>
-                                    <a href="{{ route('pemesanan.index') }}">Pemesanan</a>
-                                </li>
                                     <a href="{{ route('booking.index') }}">Booking</a>
+                                </li>
+                                <li>
+                                    <a href="{{ route('pengembalian.index') }}">Pengembalian</a>
                                 </li>
                             </ul>
                         </li>
@@ -39,20 +37,16 @@
                                 <i class="fa fa-area-chart" style="font-size:24px"></i>Merk</a>
                         </li>
                         <li>
-                            <a href="{{ route('customer.index') }}">
-                                <i class="fa fa-users" style="font-size:24px"></i>Customer</a>
-                        </li>
-                        <li>
                             <a href="{{ route('supir.index') }}">
                                 <i class="fa fa-address-book" style="font-size:24px"></i></i>Supir</a>
                         </li>
                         <li>
-                            <a href="{{ route('pemesanan.index') }}">
-                                <i class="fa fa-handshake-o" style="font-size:24px"></i>Pemesanan</a>
-                        </li>
-                        <li>
                             <a href="{{ route('booking.index') }}">
                                 <i class="fa fa-hourglass-2" style="font-size:24px"></i>Booking</a>
+                        </li>
+                        <li>
+                            <a href="{{ route('pengembalian.index') }}">
+                                <i class="fa fa-handshake-o" style="font-size:24px"></i>Pengembalian</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">

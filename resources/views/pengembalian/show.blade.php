@@ -8,7 +8,7 @@
 			<br>
 			<br>
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Show Data Pemesanan 
+			  <div class="panel-heading">Show Data Pengembalian 
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
 			  </div>
@@ -16,24 +16,24 @@
 			  <div class="panel-body">
         			<div class="form-group">
 			  			<label class="control-label">Tanggal Pengambilan</label>	
-			  			<input type="date" name="tanggal_pengambilan" class="form-control" value="{{ $pemesanan->tanggal_pengambilan }}"  readonly>
+			  			<input type="date" name="tanggal_pengambilan" class="form-control" value="{{ $pengembalian->tanggal_pengambilan }}"  readonly>
 			  		</div>
 
 			  		<div class="form-group">
 			  			<label class="control-label">Tanggal Pengembalian</label>
-						<input type="date" name="tanggal_pengembalian" class="form-control" value="{{ $pemesanan->tanggal_pengembalian }}"  readonly>
+						<input type="date" name="tanggal_pengembalian" class="form-control" value="{{ $pengembalian->tanggal_pengembalian }}"  readonly>
 			  		</div>
 			  		<div class="form-group">
 			  			<label class="control-label">Mobil</label>
-						<input type="text" name="title" class="form-control" value="{{ $pemesanan->Mobil->nama_mobil }}"  readonly>
+						<input type="text" name="title" class="form-control" value="{{ $pengembalian->Mobil->nama_mobil }}"  readonly>
 			  		</div>
 			  		<div class="form-group">
 			  			<label class="control-label">Customer</label>
-						<input type="text" name="title" class="form-control" value="{{ $pemesanan->Customer->nama }}"  readonly>
+						<input type="text" name="title" class="form-control" value="{{ $pengembalian->Customer->nama }}"  readonly>
 			  		</div>
 			  		<div class="form-group">
 			  			<label class="control-label">Supir</label>
-						<input type="text" name="title" class="form-control" value="{{ $pemesanan->Supir->nama }}"  readonly>
+						<input type="text" name="title" class="form-control" value="{{ $pengembalian->Supir->nama }}"  readonly>
 			  		</div>
 			  		
 			  	</div>

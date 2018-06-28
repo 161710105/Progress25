@@ -10,4 +10,8 @@ class UsersController extends Controller
     {
         return view('layouts.user');
     }
+     public function listmobil()
+    {
+        return view('frontend.listmobil');
+    }
 }

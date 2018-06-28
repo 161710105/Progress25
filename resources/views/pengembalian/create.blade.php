@@ -8,13 +8,13 @@
 			<br>
 			<br>
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Tambah Data Pemesanan 
+			  <div class="panel-heading">Tambah Data Pengembalian 
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
 			  </div>
 			  <br>
 			  <div class="panel-body">
-			  	<form action="{{ route('pemesanan.store') }}" method="post" >
+			  	<form action="{{ route('pengembalian.store') }}" method="post" >
 			  		{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('tanggal_pengambilan') ? ' has-error' : '' }}">
 			  			<label class="control-label">Tanggal Pengambilan</label>	

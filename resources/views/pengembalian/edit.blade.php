@@ -8,18 +8,18 @@
 			<br>
 			<br>
 			<div class="panel panel-primary">
-			  <div class="panel-heading">Edit Data Pemesanan 
+			  <div class="panel-heading">Edit Data Pengembalian 
 			  	<div class="panel-title pull-right"><a href="{{ url()->previous() }}">Kembali</a>
 			  	</div>
 			  </div>
 			  <br>
 			  <div class="panel-body">
-			  	<form action="{{ route('pemesanan.update',$pemesanan->id) }}" method="post" >
+			  	<form action="{{ route('pengembalian.update',$pengembalian->id) }}" method="post" >
 			  		<input name="_method" type="hidden" value="PATCH">
         			{{ csrf_field() }}
 			  		<div class="form-group {{ $errors->has('tanggal_pengambilan') ? ' has-error' : '' }}">
 			  			<label class="control-label">Tanggal Pengambilan</label>	
-			  			<input type="date" name="tanggal_pengambilan" class="form-control" value="{{ $pemesanan->tanggal_pengambilan }}" required>
+			  			<input type="date" name="tanggal_pengambilan" class="form-control" value="{{ $pengembalian->tanggal_pengambilan }}" required>
 			  			@if ($errors->has('tanggal_pengambilan'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('tanggal_pengambilan') }}</strong>
@@ -29,7 +29,7 @@
 
 			  		<div class="form-group {{ $errors->has('tanggal_pengembalian') ? ' has-error' : '' }}">
 			  			<label class="control-label">Tanggal Pengembalian</label>	
-			  			<input type="date" value="{{ $pemesanan->tanggal_pengembalian }}" name="tanggal_pengembalian" class="form-control"  required>
+			  			<input type="date" value="{{ $pengembalian->tanggal_pengembalian }}" name="tanggal_pengembalian" class="form-control"  required>
 			  			@if ($errors->has('tanggal_pengembalian'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('tanggal_pengembalian') }}</strong>
@@ -38,7 +38,7 @@
 			  		</div>
 			  		<div class="form-group {{ $errors->has('jumlah_hari') ? ' has-error' : '' }}">
 			  			<label class="control-label">Jumlah Hari</label>	
-			  			<input type="number" name="jumlah_hari" class="form-control" value="{{ $pemesanan->jumlah_hari }}" required>
+			  			<input type="number" name="jumlah_hari" class="form-control" value="{{ $pengembalian->jumlah_hari }}" required>
 			  			@if ($errors->has('jumlah_hari'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('jumlah_hari') }}</strong>
@@ -47,7 +47,7 @@
 			  		</div>
 			  		<div class="form-group {{ $errors->has('denda') ? ' has-error' : '' }}">
 			  			<label class="control-label">Denda</label>	
-			  			<input type="date" name="denda" class="form-control" value="{{ $pemesanan->denda }}" required>
+			  			<input type="date" name="denda" class="form-control" value="{{ $pengembalian->denda }}" required>
 			  			@if ($errors->has('denda'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('denda') }}</strong>
@@ -95,7 +95,7 @@
 			  		</div>
 			  		<div class="form-group {{ $errors->has('total_harga') ? ' has-error' : '' }}">
 			  			<label class="control-label">Total Harga</label>	
-			  			<input type="text" name="total_harga" class="form-control" value="{{ $pemesanan->total_harga }}" required>
+			  			<input type="text" name="total_harga" class="form-control" value="{{ $pengembalian->total_harga }}" required>
 			  			@if ($errors->has('total_harga'))
                             <span class="help-block">
                                 <strong>{{ $errors->first('total_harga') }}</strong>

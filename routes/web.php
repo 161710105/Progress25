@@ -12,21 +12,29 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('frontend.index');
 });
-
+Route::get('/beresbooking', function () {
+    return view('frontend.beresbooking');
+});
+Route::get('/home', function () {
+    return view('frontend.index');
+});
 Route::group(['prefix'=>'admin','middleware'=>['auth','role:admin']],function(){
 Route::resource('merk','MerkController');
 Route::resource('mobil','MobilController');
-Route::resource('customer','CustomerController');
 Route::resource('supir','SupirController');
-Route::resource('pemesanan','PemesananController');
+Route::resource('pengembalian','PengembalianController');
 Route::resource('booking','BookingController');
-Route::resource('user','UsersController');
+Route::resource('dashboard','FrontendController');
 
 });
-Route::group(['prefix'=>'member','middleware'=>['auth','role:member|admin']],function(){
-Route::resource('user','UsersController');
+Route::group(['prefix'=>'member'],function(){
+Route::resource('dashboard','FrontendController');
+Route::get('/listmobil','FrontendController@listmobil')->name('listmobil');
+Route::get('/hasilbooking','FrontendController@hasilbooking')->name('hasilbooking');
+Route::get('/beresbooking','FrontendController@beresbooking')->name('beresbooking');
+Route::get('/edithasilbooking','FrontendController@edithasilbooking')->name('edithasilbooking');
 
 });
 Auth::routes();

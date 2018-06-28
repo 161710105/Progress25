@@ -9,8 +9,8 @@
 			<br>	
 			<br>
 			<br>
-			  <div class="panel-heading"><b>Data Pemesanan</b>
-			  	<div class="panel-title pull-right"><a class="btn btn-info" href="{{ route('pemesanan.create') }}">Tambah</a>
+			  <div class="panel-heading"><b>Data Pengembalian</b>
+			  	<div class="panel-title pull-right"><a class="btn btn-info" href="{{ route('pengembalian.create') }}">Tambah</a>
 			  	</div>
 			  </div>
 		<br>
@@ -34,7 +34,7 @@
 				  	<tbody>
 				  		<?php $nomor = 1; ?>
 				  		@php $no = 1; @endphp
-				  		@foreach($pemesanan as $data)
+				  		@foreach($pengembalian as $data)
 				  	  <tr>
 				    	<td>{{ $no++ }}</td>
 				    	<td>{{ $data->tanggal_pengambilan }}</td>
@@ -47,10 +47,10 @@
 				    	<td>{{ $data->total_harga }}</td>
 				    	</li></td>
 <td>
-	<a class="btn btn-warning" href="{{ route('pemesanan.edit',$data->id) }}">Edit</a>
+	<a class="btn btn-warning" href="{{ route('pengembalian.edit',$data->id) }}">Edit</a>
 </td>
 <td>
-	<form method="post" action="{{ route('pemesanan.destroy',$data->id) }}">
+	<form method="post" action="{{ route('pengembalian.destroy',$data->id) }}">
 		<input name="_token" type="hidden" value="{{ csrf_token() }}">
 		<input type="hidden" name="_method" value="DELETE">
 
